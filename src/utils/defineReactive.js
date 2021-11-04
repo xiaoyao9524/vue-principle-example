@@ -1,6 +1,11 @@
 import Dep from './Dep';
+import Observer from './Observer';
 
 function defineReactive (data, key, val) {
+  if (typeof data === 'object') {
+    // 如果某个key也是对象或数组，那么也会将该值转化为getter/setter形式
+    new Observer(data);
+  }
   // dep用来帮助我们管理依赖
   let dep = new Dep();
 

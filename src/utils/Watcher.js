@@ -1,6 +1,6 @@
 class Watcher {
   constructor(vm, expOrFn, cb) {
-    // vm可以看做是new Vue的实例???
+    // vm可以看做是new Vue的实例
     this.vm = vm;
     // 执行this.getter()就可以获取data.a.b.c的内容
     this.getter = parsePath(expOrFn);
